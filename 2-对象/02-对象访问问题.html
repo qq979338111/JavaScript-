@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    /* 
+       访问对象内部数据--
+          对象.属性名：编码简单，有时候不能用。
+          对象['属性名']:编码困难--通用
+    */
+    /*  
+           什么时候必须使用['属性名']的方式
+              1.属性名包含特殊字符 ：-  空格  
+  
+    
+    */
+
+    var p = {}
+    // 给p对象添加一个属性 content-type：text/json 
+    // p.content-tyoe = 'text/json'不能用
+    p['content-type'] = 'text/json'
+    console.log(p['content-type']);
+
+
+  </script>
+</body>
+
+</html>

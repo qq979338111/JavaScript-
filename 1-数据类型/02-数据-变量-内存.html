@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    /* 
+       关于两个引用变量赋值问题
+              2个引用变量 指向 同一个对象，通过一个 变量 修改 对象内部数据，另一个变量看到的是修改之后的数据
+              2个引用变量 指向同一个对象 ，让其中一个引用变量指向另一个对象，另一个引用变量依然指向前一个对象
+              
+    */
+    var obj1 = { name: 'tom' } //对象
+    var obj2 = obj1;
+    obj2.name = 'kaixin'
+    obj2.age = 12
+    console.log(obj1.age);
+
+    function fn (obj) {
+      obj.name = 'baobei'
+    }
+
+    fn(obj1)
+    console.log(obj2.name);
+
+    console.log('------------------------------------');
+
+    var a = { name: '孙悟空' }
+    var b = a;
+    a = { name: '猪八戒', age: 20 }
+    b.age = 21;
+    console.log(a.name, a.age, b.name, b.age);//猪八戒 20 孙悟空 21
+
+    function fn2 (obj) {
+      obj = { age: 15 }
+      console.log('数字：', obj.age);//obj指向新的对象
+    }
+    fn2(a)
+    console.log(a.age);
+
+    /* 
+    “=”是赋值操作符。
+    “==”是判断值是否相等操作符。
+    “===”是判断是否完全相等操作符。
+    
+    */
+
+
+  </script>
+</body>
+
+</html>
