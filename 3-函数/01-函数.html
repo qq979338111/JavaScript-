@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+
+    /* 
+     2.为什么要用函数？
+            - 提高代码复用
+            -便于阅读交流
+     3.如何定义函数？  
+            -函数声明  
+                    function fn1 () {
+                        
+                    }
+
+            -表达式  
+                    var fn2 = function () {
+                       
+                    }
+
+      4.如何调用函数？
+            -test():直接调用 
+            -obj.test():通过对象调用
+            -new test（）：new调用
+            -test.call/apply(obj): 临时让test成为obj 的方法进行调用          
+    */
+
+
+    /* 
+
+      根据年龄实现一下需求：
+         - 如果小于18，输出：未成年，再等等
+         -如果大于60，输出，算了吧！
+         -其他，刚好
+    
+    */
+
+    function showInfo (age) {
+      if (age < 18) {
+        console.log('未成年，再等等');
+      } else if (age > 60) {
+        console.log('算了吧');
+      } else {
+        console.log('刚刚好！');
+      }
+    }
+    showInfo(20)
+
+
+    console.log('-----------------------------');
+
+    var obj = {};
+    function test () {
+      this.xxx = 'kaixin'
+
+    }
+    // obj.test()  obj没有test() 
+
+    test.call(obj)
+    console.log(obj.xxx);
+// -test.call/apply(obj): 临时让test成为obj 的方法进行调用
+
+
+// 函数体现的是封装的思想
+  </script>
+</body>
+
+</html>
