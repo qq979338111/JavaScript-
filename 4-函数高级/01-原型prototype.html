@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <!-- 
+        函数的prototype 属性:
+              ` 每个函数都有一个prototype 属性，它默认 指向一个object空对象（即 原型对象）
+              - 原型对象中有一个属性：constructor ，它指向函数对象；
+       -->
+
+  <script>
+    console.log(Date.prototype);//有属性。
+    function Fun () {
+
+    }
+
+    console.log(Fun.prototype);//-- 指向object 对象--- 暂时没有属性，因为还没有自定义属性
+
+
+
+
+
+
+    // 原型对象中有一个属性：constructor ，它指向函数对象
+    console.log(Date.prototype.constructor === Date) //true
+    console.log(Fun.prototype.constructor === Fun);//true   ---构造函数跟原型对象相互引用
+
+    //给原型对象添加属性(一般是方法)-->实例对象可以访问
+    Fun.prototype.test = function () {
+      console.log('我是Fun原型上的test方法');
+    }
+    // vscode  重写函数名 CTRL + F2
+    // 实例对象： fun 
+    var fun = new Fun
+    fun.test()
+
+
+
+  </script>
+</body>
+
+</html>

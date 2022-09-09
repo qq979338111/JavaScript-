@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    function Fn () {
+
+    }
+    Fn.prototype.test1 = function () {
+      console.log('test1');
+    }
+    Fn.prototype.test2 = function () {
+      console.log('test2');
+    }
+    var fn = new Fn();
+    // fn.test3()
+
+    console.log(fn.toString);
+
+
+    console.log('------------------------------');
+    function TEST () {
+
+    }
+
+    /* 
+      1.读取对象的属性值时：会自动到原型链中查找；
+      2.设置对象的属性值时，不会查找原型链，如果当前对象中没有此属性，直接添加此属性并设置其值；
+      3.方法一般定义在原型中，属性一般通过构造函数定义在对象本身上
+    
+    */
+    TEST.prototype.a = 'aaa'
+    var ts1 = new TEST()
+    console.log(ts1.a, ts1);//aaa
+
+
+    var ts2 = new TEST()
+    ts2.a = 'AAA'
+
+    console.log(ts1.a, ts2.a, ts2);
+
+
+    function Person (name, age) {
+      this.name = name;
+      this.age = age;
+
+    }
+    Person.prototype.setName = function (name) {
+      this.name = name;
+    }
+    var p1 = new Person('Tom', 12)
+    p1.setName('bob')
+    console.log(p1);
+
+    var p2 = new Person('jack', 24)
+    p1.setName('cat')
+    console.log(p2);
+    console.log(p1.__proto__ == p2.__proto__);//true
+  </script>
+</body>
+
+</html>
