@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>变量提升和函数提升</title>
+</head>
+
+<body>
+  <script>
+    var a = 3
+    function fn () {
+      // var a;
+
+      console.log(a);//undefined  
+      var a = 4//a = 4
+    }
+    fn();
+
+
+    console.log(b);//undefined  ---变量提升
+    var b = 3
+
+
+
+    fun2(); //函数提升
+
+    function fn2 () {
+      console.log('fun2');
+    }
+
+  </script>
+</body>
+
+</html>

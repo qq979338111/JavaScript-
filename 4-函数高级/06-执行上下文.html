@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <!-- 
+        -在执行全局代码前，将window 确定为全局执行上下文；
+           -对全局数据进行预处理 
+            var 定义的全局变量 ==>undefined ，添加为window 的属性；
+            function 声明的全局函数 ==>赋值 添加为window 的方法
+            this == 赋值（window）
+         函数执行上下文
+              在调用函数，准备执行函数体前，创建对应的函数执行上下文对象（虚拟的，存在于栈中）；
+              
+     -->
+
+  <script>
+    // 全局执行上下文
+    console.log(a1, window.a1);
+    window.a2()
+
+
+    console.log(this);
+
+    var a1 = 3;
+    function a2 () {
+      console.log('a2');
+    }
+    console.log(a1);
+
+    // 函数执行上下文
+    function fn (a1) {
+      console.log(a1);
+      console.log(a2);
+      a3()
+      console.log(this);
+      console.log(arguments);
+
+      var a2 = 3
+      function a3 () {
+        console.log('a3');
+      }
+    }
+    fn(2, 3)
+
+    console.log('---------------------------');
+
+
+
+
+  </script>
+
+
+</body>
+
+</html>
